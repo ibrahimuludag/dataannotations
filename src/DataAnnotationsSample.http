@@ -1,0 +1,31 @@
+@DataAnnotationsSample_HostAddress = http://localhost:5013
+
+POST {{DataAnnotationsSample_HostAddress}}/api/student
+Accept: application/json
+Content-Type: application/json
+
+{
+    "id": "bb33ad0c-a588-42da-bc1c-f1e14ee61844",
+    "firstName": "Ibrahim",
+    "lastName": "Uludag",
+    "age": 20,
+    "grade": "Junior",
+    "password": "S@cretPass",
+    "hash": "U0BjcmV0UGFzcw=="
+}
+###
+
+// Invalid Request
+POST {{DataAnnotationsSample_HostAddress}}/api/student
+Accept: application/json
+Content-Type: application/json
+
+{
+    "id": "bb33ad0c-a588-42da-bc1c-f1e14ee61844",
+    "firstName": "VeryVeryVeryVeryVeryVeryVeryVeryVeryLongName",
+    "lastName": "VeryVeryVeryVeryVeryVeryVeryVeryVeryLongSurname",
+    "age": 100,
+    "grade": "Junior+++",
+    "password": "123456",
+    "hash": "xxx"
+}
